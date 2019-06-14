@@ -5,6 +5,7 @@ import Note from './Note.js'
 import Ingredient from './Ingredient.js'
 import Step from './Step.js'
 
+
 export default class RecipeCardBig extends Component {
   render() {
     const { title, image, description, prep_time: prepTime, cook_time: cookTime, ready_in_time: totalTime, ingredients, steps } = this.props.recipe
@@ -17,9 +18,11 @@ export default class RecipeCardBig extends Component {
             <Grid.Row style={{margin:"10px"}} centered>
               <h1>{title}</h1>
             </Grid.Row>
+      
             <div style={{margin: "0 auto", padding:"10px", border: "1px solid darkgrey"}}>
               <Timer/>
             </div>
+      
             <Grid.Row centered>
               <img className="recipe-image"alt ={title} src={image} height="250px" width="250px" />
             </Grid.Row>
@@ -43,11 +46,11 @@ export default class RecipeCardBig extends Component {
                 </ul>
               </Grid.Column>
               <Grid.Column width={8}>
-              <List ordered>
+                <List ordered>
 
-                  {steps.map(step =>  <List.Item><Step step={step}/></List.Item>)}
+                    {steps.map(step =>  <List.Item><Step step={step}/></List.Item>)}
 
-              </List>
+                </List>
               </Grid.Column>
             </Grid.Row>
 
