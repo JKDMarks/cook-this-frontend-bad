@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Button, Card, Grid } from 'semantic-ui-react'
+import { Button, Card, Grid, List } from 'semantic-ui-react'
 import Timer from './Timer.js'
 import Note from './Note.js'
-
+import Ingredient from './Ingredient.js'
+import Step from './Step.js'
 
 export default class RecipeCardBig extends Component {
   render() {
@@ -38,13 +39,15 @@ export default class RecipeCardBig extends Component {
             <Grid.Row centered>
               <Grid.Column width={4}>
                 <ul>
-                  {ingredients.map(ingr => <li>{ingr.content}</li>)}
+                  {ingredients.map(ingr => <Ingredient ingredient={ingr}/>)}
                 </ul>
               </Grid.Column>
               <Grid.Column width={8}>
-                <ol>
-                  {steps.map(step => <li>{step.content}</li>)}
-                </ol>
+              <List ordered>
+                
+                  {steps.map(step =>  <List.Item><Step step={step}/></List.Item>)}
+
+              </List>
               </Grid.Column>
             </Grid.Row>
 
@@ -53,7 +56,7 @@ export default class RecipeCardBig extends Component {
             <Grid.Row centered>
               <Note/>
             </Grid.Row>
-            
+
             <Grid.Row centered>
               <Button positive
               style={{margin:"20px"}}
