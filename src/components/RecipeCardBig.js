@@ -17,7 +17,7 @@ export default class RecipeCardBig extends Component {
             <Grid.Row style={{margin:"10px"}} centered>
               <h1>{title}</h1>
             </Grid.Row>
-            <div style={{margin: "0 auto", padding:"10px", border: "1px solid black"}}>
+            <div style={{margin: "0 auto", padding:"10px", border: "1px solid darkgrey"}}>
               <Timer/>
             </div>
             <Grid.Row centered>
@@ -44,7 +44,7 @@ export default class RecipeCardBig extends Component {
               </Grid.Column>
               <Grid.Column width={8}>
               <List ordered>
-                
+
                   {steps.map(step =>  <List.Item><Step step={step}/></List.Item>)}
 
               </List>
