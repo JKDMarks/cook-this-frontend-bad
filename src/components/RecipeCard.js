@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Icon, Button } from 'semantic-ui-react'
 
+
 export default class RecipesCard extends Component {
   render() {
     const {id, title, image, description, ready_in_time: cookTime} = this.props.recipe
